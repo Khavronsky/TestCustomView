@@ -24,8 +24,6 @@
         android:layout_height="50dp"
         android:inputType="number"
         android:hint="Radius"
-        android:onClick="setAllParameters"
-        android:fadeScrollbars="true"
         />
 
     <EditText
@@ -34,7 +32,7 @@
         android:layout_height="50dp"
         android:inputType="number"
         android:hint="Margin"
-        android:onClick="setAllParameters"/>
+        />
 
     <EditText
         android:id="@+id/set_focused_circle"
@@ -42,7 +40,7 @@
         android:layout_height="50dp"
         android:inputType="number"
         android:hint="Focused circle"
-        android:onClick="setAllParameters"/>
+        />
 
     <EditText
         android:id="@+id/set_count_of_circles"
@@ -50,7 +48,7 @@
         android:layout_height="50dp"
         android:inputType="number"
         android:hint="Count of circles"
-        android:onClick="setAllParameters"/>
+        />
 
     <Button
         android:id="@+id/ok_button"

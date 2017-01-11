@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 //        myView.setDefaultColor(Color.BLUE);
 //        myView.setBackgroundColor(Color.BLACK);
         myView.invalidate();
-
     }
 
     private void init() {
@@ -38,15 +37,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setAllParameters(View view) {
-        int id = view.getId();
-        MyView myView = new MyView(this);
-        if (id == R.id.ok_button) {
-            Log.d("!!!", "setAllParameters: ");
-            myView.setRadius(Integer.parseInt(setRadius.getText().toString()));
-            myView.setMargin(Integer.parseInt(setMargin.getText().toString()));
-            myView.setFocusedCircle(Integer.parseInt(setFocusedCircle.getText().toString()));
-            myView.setCountOfCircle(Integer.parseInt(setCountOfCircle.getText().toString()));
-            myView.invalidate();
-        }
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("!!!", "setAllParameters: ");
+                myView.setRadius(Integer.parseInt(setRadius.getText().toString()));
+                myView.setMargin(Integer.parseInt(setMargin.getText().toString()));
+                myView.setFocusedCircle(Integer.parseInt(setFocusedCircle.getText().toString()));
+                myView.setCountOfCircle(Integer.parseInt(setCountOfCircle.getText().toString()));
+                myView.invalidate();
+            }
+        });
     }
 }

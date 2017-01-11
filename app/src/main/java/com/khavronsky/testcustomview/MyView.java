@@ -1,6 +1,7 @@
 package com.khavronsky.testcustomview;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -36,7 +37,8 @@ public class MyView extends View {
     }
 
     public MyView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        super(context);
+        setupAttributes(attrs);
         init();
     }
 
@@ -57,6 +59,13 @@ public class MyView extends View {
         focusedCircle = 7;
 
         paint = new Paint();
+    }
+    private void setupAttributes(AttributeSet attrs){
+//        TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs,R.styleable.MyView, 0, 0);
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MyView);
+
+        radius = (int) a.getDimension(R.styleable.MyView_radius, DEFAULT_RADIUS);
+
     }
 
     @Override
