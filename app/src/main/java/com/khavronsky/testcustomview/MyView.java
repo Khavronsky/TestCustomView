@@ -25,10 +25,9 @@ public class MyView extends View {
     private int defaultColor;
     private int focusedColor;
     private int focusedCircle;
+    private int countCircles;
 
     private Paint paint;
-
-    private int countCircles;
     final String TAG = "MyView";
 
     public MyView(Context context) {
