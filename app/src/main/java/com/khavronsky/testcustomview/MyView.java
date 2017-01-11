@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 public class MyView extends View {
@@ -28,6 +29,7 @@ public class MyView extends View {
     private Paint paint;
 
     private int countCircles;
+    final String TAG = "MyView";
 
     public MyView(Context context) {
         super(context);
@@ -75,24 +77,27 @@ public class MyView extends View {
 
     public void setRadius(int radius) {
         this.radius = radius;
+        Log.d(TAG, "setRadius: ");
     }
 
     public void setMargin(int margin) {
         this.margin = margin;
-
+        Log.d(TAG, "setMargin: ");
     }
 
     public void setFocusedCircle(int focusedCircle) {
         this.focusedCircle = focusedCircle;
+        Log.d(TAG, "setFocusedCircle: " + focusedCircle);
     }
 
-    public void setCountCircles(int countCircles) {
+    public void setCountOfCircle(int countCircles) {
         this.countCircles = countCircles;
-
+        Log.d(TAG, "setCountOfCircle: ");
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        Log.d(TAG, "onDraw: ");
         super.onDraw(canvas);
         canvas.drawColor(Color.LTGRAY);
         paint.setStrokeWidth(STROKE_WIDTH);

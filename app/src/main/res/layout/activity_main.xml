@@ -19,37 +19,44 @@
         android:background="#ffcf8c" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/set_radius"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:hint="Radius"
+        android:onClick="setAllParameters"
+        android:fadeScrollbars="true"
+        />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/set_margin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:hint="Margin"
+        android:onClick="setAllParameters"/>
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/set_focused_circle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:hint="Focused circle"
+        android:onClick="setAllParameters"/>
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/set_count_of_circles"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:hint="Count of circles"
+        android:onClick="setAllParameters"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/ok_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OK" />
+        android:text="OK"
+        android:onClick="setAllParameters"/>
 
 </LinearLayout>
