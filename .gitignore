@@ -38,3 +38,5 @@ captures/
 
 # Keystore files
 *.jks
+Будет удалено app/libs/
+Будет удалено app/src/main/res/drawable/
