@@ -9,8 +9,7 @@ import android.view.View;
 
 public class MyView extends View {
 
-
-    final int MIN_WIDTH = 400; //1055
+    final int MIN_WIDTH = 400;
     final int MIN_HEIGHT = 100;
     final int DEFAULT_COLOR = Color.GRAY;
     final int FOCUSED_COLOR = Color.DKGRAY;
@@ -29,6 +28,7 @@ public class MyView extends View {
     private Paint paint;
 
     private int countCircles;
+
     public MyView(Context context) {
         super(context);
         init();
