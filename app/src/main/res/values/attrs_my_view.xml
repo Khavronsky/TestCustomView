@@ -1,6 +1,10 @@
 <resources>
     <declare-styleable name="MyView">
-        <attr name="exampleString" format="string" />
-        <attr name="exampleDimension" format="dimension" />
+        <attr name="defaultColor" format="color" />
+        <attr name="focusedColor" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="margin" format="dimension" />
+        <attr name="focusedCircle" format="integer" />
+        <attr name="countCircles" format="integer" />
     </declare-styleable>
 </resources>
