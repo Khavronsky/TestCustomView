@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        myView.setDefaultColor(Color.BLUE);
 //        myView.setBackgroundColor(Color.BLACK);
-        myView.invalidate();
+//        myView.invalidate();
     }
 
     private void init() {
@@ -34,9 +34,10 @@ public class MainActivity extends AppCompatActivity {
         setFocusedCircle = (EditText) findViewById(R.id.set_focused_circle);
         setCountOfCircle = (EditText) findViewById(R.id.set_count_of_circles);
         okButton = (Button) findViewById(R.id.ok_button);
+        setAllParameters();
     }
 
-    public void setAllParameters(View view) {
+    public void setAllParameters() {
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
