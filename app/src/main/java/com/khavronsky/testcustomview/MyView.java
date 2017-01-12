@@ -1,7 +1,6 @@
 package com.khavronsky.testcustomview;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -37,8 +36,8 @@ public class MyView extends View {
     }
 
     public MyView(Context context, AttributeSet attrs) {
-        super(context);
-        setupAttributes(attrs);
+        super(context, attrs);
+//        setupAttributes(attrs);
         init();
     }
 
@@ -58,15 +57,14 @@ public class MyView extends View {
         countCircles = 10;
         focusedCircle = 7;
 
-        paint = new Paint();
+        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     }
-    private void setupAttributes(AttributeSet attrs){
+//    private void setupAttributes(AttributeSet attrs){
 //        TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs,R.styleable.MyView, 0, 0);
-        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MyView);
-
-        radius = (int) a.getDimension(R.styleable.MyView_radius, DEFAULT_RADIUS);
-
-    }
+//        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MyView);
+//
+//        radius = (int) a.getDimension(R.styleable.MyView_radius, DEFAULT_RADIUS);
+//    }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -110,7 +108,14 @@ public class MyView extends View {
         canvas.drawColor(Color.LTGRAY);
         paint.setStrokeWidth(STROKE_WIDTH);
 
-        int firstCircleCoordinate = myWidth / 2 - ((countCircles - 1) / 2) * margin;
+        int firstCircleCoordinate;
+        int oddOrEven = countCircles;
+        if ((oddOrEven %= 2) != 0) {
+
+            firstCircleCoordinate = myWidth / 2 - ((countCircles - 1) / 2) * margin;
+        } else {
+            firstCircleCoordinate = myWidth / 2 - ((countCircles) / 2) * margin + margin / 2;
+        }
 
         for (int i = 0; i < countCircles; i++) {
             paint.setColor(DEFAULT_COLOR);
